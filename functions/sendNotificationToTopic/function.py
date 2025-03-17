@@ -9,7 +9,10 @@ from firebase_admin import firestore
 from datetime import datetime, timezone
 from typing import Dict, List, Any
 from models.property_notification import Change, ChangeType, PropertyNotification
-from server.functions.notification import buildNotificationChangePayload, createInAppNotifications, sendPushNotifications
+from sendNotificationToTopic.helpers.buildNotification import buildNotificationChangePayload
+from sendNotificationToTopic.helpers.createInAppNotification import createInAppNotifications
+from sendNotificationToTopic.helpers.sendPushNotification import sendPushNotifications
+
 
 
 @on_document_updated(document="properties/{propertyId}")
